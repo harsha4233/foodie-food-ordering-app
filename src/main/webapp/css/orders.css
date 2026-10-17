@@ -1,0 +1,305 @@
+@charset "UTF-8";
+/* ========================================
+   FOODIE - MY ORDERS PAGE
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080808;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+}
+
+.highlight {
+    color: #ff9800;
+}
+
+/* MAIN PAGE */
+
+.orders-container {
+    max-width: 1050px;
+    width: 92%;
+    margin: 28px auto 45px;
+}
+
+.page-heading {
+    margin-bottom: 22px;
+}
+
+.page-heading h1 {
+    font-size: 30px;
+    margin-bottom: 7px;
+}
+
+.page-heading p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #aaa;
+}
+
+/* ORDER CARD */
+
+.order-card {
+    background: #111;
+    border: 1px solid #2b2b2b;
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 18px;
+    transition: border-color 0.2s;
+}
+
+.order-card:hover {
+    border-color: #ff9800;
+}
+
+/* RESTAURANT DETAILS */
+
+.restaurant-header {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding-bottom: 13px;
+    border-bottom: 1px solid #292929;
+}
+
+.restaurant-image {
+    width: 76px;
+    height: 66px;
+    flex-shrink: 0;
+    border-radius: 9px;
+    object-fit: cover;
+    background: #222;
+}
+
+.image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+}
+
+.restaurant-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.restaurant-info h2 {
+    font-size: 17px;
+    margin-bottom: 6px;
+    overflow-wrap: anywhere;
+}
+
+.order-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 12px;
+    color: #aaa;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* ORDER STATUS */
+
+.status {
+    display: inline-block;
+    margin-top: 7px;
+    padding: 4px 9px;
+    border: 1px solid #754900;
+    border-radius: 20px;
+    color: #ffb52e;
+    background: #211707;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+}
+
+/* ORDERED ITEMS */
+
+.items-title {
+    font-size: 16px;
+    margin: 15px 0 5px;
+}
+
+.food-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid #252525;
+}
+
+.food-image {
+    width: 58px;
+    height: 54px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 7px;
+    background: #222;
+}
+
+.food-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.food-details h3 {
+    font-size: 14px;
+    margin-bottom: 5px;
+    overflow-wrap: anywhere;
+}
+
+.food-details p {
+    color: #aaa;
+    font-size: 12px;
+}
+
+.item-price {
+    color: #ff9800;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* ORDER TOTAL */
+
+.total-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 13px;
+    padding-top: 12px;
+    border-top: 1px solid #292929;
+}
+
+.total-label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.total-amount {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ff9800;
+}
+
+/* EMPTY ORDERS */
+
+.empty-state {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 38px 20px;
+    text-align: center;
+    background: #111;
+    border: 1px solid #303030;
+    border-radius: 12px;
+}
+
+.empty-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.empty-state h2 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.empty-state p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+.primary-btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #ff9800, #ff5a1f);
+    color: #fff;
+    text-decoration: none;
+    padding: 11px 19px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 18px rgba(255, 152, 0, 0.25);
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+    .orders-container {
+        width: 94%;
+    }
+
+    .page-heading h1 {
+        font-size: 28px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 550px) {
+    .orders-container {
+        width: 94%;
+        margin-top: 22px;
+    }
+
+    .page-heading h1 {
+        font-size: 25px;
+    }
+
+    .order-card {
+        padding: 12px;
+        margin-bottom: 14px;
+    }
+
+    .restaurant-header {
+        gap: 10px;
+    }
+
+    .restaurant-image {
+        width: 64px;
+        height: 58px;
+    }
+
+    .restaurant-info h2 {
+        font-size: 15px;
+    }
+
+    .food-item {
+        gap: 10px;
+    }
+
+    .food-image {
+        width: 49px;
+        height: 47px;
+    }
+
+    .food-details h3 {
+        font-size: 13px;
+    }
+
+    .food-details p {
+        font-size: 11px;
+    }
+
+    .item-price {
+        font-size: 12px;
+    }
+
+    .total-amount {
+        font-size: 17px;
+    }
+}

@@ -1,0 +1,269 @@
+@charset "UTF-8";
+/* MENU PAGE */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #050505;
+    color: white;
+}
+
+/* Menu section */
+
+.menu-section {
+    min-height: calc(100vh - 100px);
+    padding: 45px 7% 70px;
+}
+
+/* Title */
+
+.menu-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.menu-title h1 {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.menu-title h1 span {
+    color: #ff9800;
+}
+
+.menu-title p {
+    margin-top: 12px;
+    font-size: 18px;
+    color: #aaa;
+}
+
+/* Search */
+
+.search-box {
+    width: 70%;
+    height: 64px;
+    margin: 35px auto 45px;
+    border: 1px solid #3a3a3a;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    padding: 0 22px;
+    background: #111;
+}
+
+.search-box input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-size: 17px;
+}
+
+.search-box input::placeholder {
+    color: #888;
+}
+
+.search-icon {
+    font-size: 24px;
+}
+
+/* Menu grid */
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Menu card */
+
+.menu-card {
+    width: 100%;
+    min-height: 360px;
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.menu-card:hover {
+    transform: translateY(-6px);
+    border-color: #ff9800;
+    box-shadow: 0 10px 30px rgba(255, 152, 0, 0.15);
+}
+
+/* Image */
+
+.menu-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Card content */
+
+.menu-card-body {
+    padding: 15px;
+}
+
+.menu-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: white;
+    overflow-wrap: anywhere;
+}
+
+.menu-description {
+    font-size: 14px;
+    color: #aaa;
+    line-height: 1.4;
+    min-height: 40px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.menu-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.menu-price {
+    color: #ff9800;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.menu-rating {
+    color: #ffd54f;
+    font-size: 14px;
+}
+
+/* Add to cart */
+
+.add-cart-btn {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    text-align: center;
+    background: #ff7a00;
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.add-cart-btn:hover {
+    background: #ff9800;
+}
+
+/* Quantity controls */
+
+.quantity-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin: 15px auto 0;
+    border: 1px solid #ff9800;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.quantity-btn {
+    width: 38px;
+    height: 38px;
+    border: none;
+    background: transparent;
+    color: #ff9800;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.quantity-btn:hover {
+    background: rgba(255, 152, 0, 0.12);
+}
+
+.quantity-number {
+    min-width: 40px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+/* Empty menu */
+
+.no-menu {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 80px;
+    color: #aaa;
+    font-size: 20px;
+}
+
+/* Responsive layout */
+
+@media (max-width: 1000px) {
+    .menu-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 750px) {
+    .menu-section {
+        padding: 35px 4% 50px;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .search-box {
+        width: 90%;
+    }
+
+    .menu-title h1 {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 500px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-card {
+        max-width: 360px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .menu-title h1 {
+        font-size: 32px;
+    }
+
+    .search-box {
+        width: 100%;
+        height: 54px;
+        margin: 25px auto 30px;
+    }
+}

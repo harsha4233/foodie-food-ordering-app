@@ -1,0 +1,385 @@
+@charset "UTF-8";/* Cart page styles */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #050505;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.cart-section {
+    min-height: 75vh;
+    padding: 45px 7% 70px;
+}
+
+.cart-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.cart-title h1 {
+    margin: 0;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.cart-title h1 span {
+    color: #ff9800;
+}
+
+.cart-title p {
+    margin-top: 12px;
+    font-size: 18px;
+    color: #aaa;
+}
+
+.cart-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 25px;
+    align-items: start;
+}
+
+.cart-items-box,
+.bill-box {
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 12px;
+}
+
+.cart-items-box {
+    padding: 20px 25px;
+    min-width: 0;
+}
+
+.restaurant-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 5px 0 20px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #333;
+}
+
+.restaurant-image {
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.restaurant-details {
+    min-width: 0;
+    padding-right: 130px;
+}
+
+.restaurant-name {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.restaurant-location {
+    color: #aaa;
+    margin-top: 5px;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.menu-btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px 15px;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #ff9800;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: background .2s, color .2s;
+}
+
+.menu-btn:hover {
+    background: #ff9800;
+    color: #111;
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 75px minmax(0, 1fr) auto auto;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid #2c2c2c;
+}
+
+.menu-image {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #333;
+    display: block;
+}
+
+.item-details {
+    min-width: 0;
+}
+
+.item-name {
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;
+    overflow-wrap: anywhere;
+}
+
+.item-price-small {
+    margin-top: 7px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.quantity-form {
+    display: flex;
+    align-items: center;
+    height: 38px;
+    border: 1px solid #555;
+    border-radius: 7px;
+    overflow: hidden;
+    background: #181818;
+}
+
+.quantity-btn {
+    width: 34px;
+    height: 36px;
+    border: 0;
+    background: transparent;
+    color: #ff9800;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.quantity-btn:hover {
+    background: #252525;
+}
+
+.quantity-number {
+    width: 32px;
+    text-align: center;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.item-subtotal {
+    min-width: 75px;
+    text-align: right;
+    color: #ff9800;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.suggestions {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: #888;
+    font-size: 14px;
+    background: #0d0d0d;
+}
+
+.bill-box {
+    padding: 25px;
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+}
+
+.bill-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.bill-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 18px;
+    font-size: 14px;
+}
+
+.bill-label {
+    color: #aaa;
+}
+
+.bill-value {
+    color: #fff;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.bill-divider {
+    border: 0;
+    border-top: 1px solid #333;
+    margin: 20px 0;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-top: 5px;
+}
+
+.total-label {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.total-value {
+    color: #ff9800;
+    font-size: 22px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.place-order,
+.continue-shopping {
+    display: block;
+    width: 100%;
+    margin-top: 25px;
+    padding: 13px 16px;
+    border: 0;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #ff5722, #ff9800);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.place-order:hover,
+.continue-shopping:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(255, 152, 0, .3);
+}
+
+.empty-cart {
+    max-width: 700px;
+    margin: 70px auto;
+    padding: 45px 25px;
+    text-align: center;
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 12px;
+}
+
+.empty-cart-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.empty-cart h2 {
+    font-size: 28px;
+    margin: 0 0 12px;
+}
+
+.empty-cart p {
+    color: #888;
+    font-size: 16px;
+}
+
+.continue-shopping {
+    width: fit-content;
+    margin: 25px auto 0;
+}
+
+@media (max-width: 950px) {
+    .cart-container {
+        grid-template-columns: 1fr;
+    }
+
+    .bill-box {
+        position: static;
+    }
+}
+
+@media (max-width: 650px) {
+    .cart-section {
+        padding: 30px 4% 50px;
+    }
+
+    .cart-title h1 {
+        font-size: 38px;
+    }
+
+    .cart-items-box {
+        padding: 16px;
+    }
+
+    .restaurant-header {
+        align-items: flex-start;
+        padding-bottom: 65px;
+    }
+
+    .restaurant-details {
+        padding-right: 0;
+    }
+
+    .menu-btn {
+        top: auto;
+        bottom: 12px;
+        left: 0;
+        right: auto;
+        transform: none;
+    }
+
+    .cart-item {
+        grid-template-columns: 65px minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .menu-image {
+        width: 65px;
+        height: 65px;
+    }
+
+    .quantity-form {
+        grid-column: 2;
+        justify-self: start;
+    }
+
+    .item-subtotal {
+        grid-column: 2;
+        text-align: left;
+    }
+
+    .bill-box {
+        padding: 20px;
+    }
+}

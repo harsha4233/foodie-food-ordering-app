@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Foodie - Home</title>
+
+
+    <style>
+
+        /* =====================================
+           RESET
+        ====================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+
+        body {
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            background: #000;
+
+            color: white;
+
+            overflow-x: hidden;
+        }
+
+
+        /* =====================================
+           HOME / HERO SECTION
+        ====================================== */
+
+		/* .home {
+			    position: relative;
+			
+			    min-height: 100vh;
+			    width: 100%;
+			
+			    background-image:   linear-gradient(
+                    90deg,
+                    rgba(0, 0, 0, 0.78) 0%,
+                    rgba(0, 0, 0, 0.40) 45%,
+                    rgba(0, 0, 0, 0.35) 100%
+                ),
+
+                url("preparefood.png");
+			    background-size: cover;
+			    background-position: center;
+			    background-repeat: no-repeat;
+			
+			    overflow: hidden;
+			} 
+
+        /* =====================================
+           NAVBAR
+        ====================================== */
+		
+	 /*  .home::before {
+		    content: "";
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		
+		    background: rgba(0, 0, 0, 0.20);
+		
+		    z-index: 1;
+				}  */
+				
+				
+				.home {
+		    position: relative;
+		    min-height: 100vh;
+		    width: 100%;
+		    overflow: hidden;
+		}
+		
+		.hero-video {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		    object-fit: cover;
+		    z-index: 0;
+		}
+		
+		.video-overlay {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		    background: linear-gradient(
+		        90deg,
+		        rgba(0, 0, 0, 0.45) 0%,
+		        rgba(0, 0, 0, 0.18) 45%,
+		        rgba(0, 0, 0, 0.10) 100%
+		    );
+		    z-index: 1;
+		}
+
+		.navbar,
+		.hero-content {
+		    position: relative;
+		    z-index: 2;
+		}
+		
+		
+	      .navbar {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 90px;
+		
+		    display: flex;
+		    align-items: center;
+		    justify-content: space-between;
+		
+		    padding: 0 7%;
+		    box-sizing: border-box;
+		
+		    background: transparent;
+		
+		    z-index: 1000;
+		}
+
+
+        /* =====================================
+           LOGO
+        ====================================== */
+
+        .logo {
+
+            font-size: 30px;
+
+            font-weight: bold;
+
+            margin-right: 80px;
+
+            text-shadow:
+                0 2px 10px #000;
+        }
+
+
+        .logo span {
+
+            color: #ff8c00;
+        }
+
+
+        /* =====================================
+           NAVIGATION LINKS
+        ====================================== */
+
+        .nav-links {
+
+            display: flex;
+
+            gap: 35px;
+
+            list-style: none;
+        }
+
+
+        .nav-links a {
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 16px;
+
+            font-weight: 500;
+
+            transition: 0.3s;
+
+            position: relative;
+        }
+
+
+        .nav-links a:hover {
+
+            color: #ff9800;
+        }
+
+
+        .nav-links a.active {
+
+            color: #ff9800;
+        }
+
+
+        .nav-links a.active::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: -10px;
+
+            width: 100%;
+
+            height: 2px;
+
+            background: #ff9800;
+        }
+
+
+        /* =====================================
+           RIGHT NAVIGATION
+        ====================================== */
+
+        .nav-right {
+
+            margin-left: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+        }
+
+
+        .nav-right span {
+
+            color: #eee;
+
+            font-size: 14px;
+
+            margin-right: 8px;
+        }
+
+
+        /* =====================================
+           SIGN IN BUTTON
+        ====================================== */
+
+        .signin-btn {
+
+            display: inline-block;
+
+            text-decoration: none;
+
+            color: white;
+
+            padding: 11px 25px;
+
+            border: 1px solid #ff9800;
+
+            border-radius: 7px;
+
+            transition: 0.3s;
+
+            font-weight: bold;
+        }
+
+
+        .signin-btn:hover {
+
+            background: #ff9800;
+
+            color: #111;
+
+            box-shadow:
+                0 0 20px
+                rgba(255, 152, 0, 0.5);
+
+            transform:
+                translateY(-2px);
+        }
+
+
+        /* =====================================
+           SIGN UP BUTTON
+        ====================================== */
+
+        .signup-btn {
+
+            display: inline-block;
+
+            text-decoration: none;
+
+            color: white;
+
+            padding: 11px 25px;
+
+            border-radius: 7px;
+
+            font-weight: bold;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ff5722,
+                    #ff9800
+                );
+
+            transition: 0.3s;
+        }
+
+
+        .signup-btn:hover {
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 0 20px
+                rgba(255, 152, 0, 0.5);
+        }
+
+
+        /* =====================================
+           HERO
+        ====================================== */
+
+       .hero {
+		    width: 100%;
+		    height: 100vh;
+		    background-size: cover;
+		}
+        
+        .hero {
+		    position: relative;
+		
+		    min-height: calc(100vh - 80px);
+		
+		    display: flex;
+		    align-items: center;
+		
+		    padding: 80px 7%;
+		
+	/*         background-image: url("images/preparefood.png"); */
+		
+		    background-size: cover;
+		
+		    background-position: center;
+		
+		    background-repeat: no-repeat;
+		
+		    overflow: hidden;
+		}
+
+
+        /* =====================================
+           HERO CONTENT
+        ====================================== */
+
+        .hero-content {
+
+            width: 50%;
+
+            max-width: 650px;
+
+            position: relative;
+            
+            z-index: 2;
+            
+            transform: translateY(80px);
+        }
+
+
+     
+
+
+        /* =====================================
+           SMALL HEADING
+        ====================================== */
+
+        .small-heading {
+
+            color: #ff9800;
+
+            font-size: 22px;
+
+            font-weight: bold;
+
+            font-style: italic;
+
+            margin-bottom: 15px;
+
+            animation:
+                headingFloat 3s ease-in-out infinite;
+        }
+
+
+        @keyframes headingFloat {
+
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+
+        /* =====================================
+           MAIN HEADING
+        ====================================== */
+
+        .hero h1 {
+
+            font-size:
+                clamp(
+                    48px,
+                    6vw,
+                    80px
+                );
+
+            line-height: 1.05;
+
+            margin-bottom: 20px;
+
+            text-shadow:
+                0 4px 15px #000;
+                
+                color: #ffffff;
+               text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+        }
+
+
+        .hero h1 span {
+
+            color: #ff9800;
+        }
+
+
+        /* =====================================
+           DESCRIPTION
+        ====================================== */
+
+        .hero p {
+
+            max-width: 520px;
+
+            color: #fbfaf9;
+
+            font-size: 18px;
+
+            line-height: 1.7;
+
+            margin-bottom: 30px;
+
+            text-shadow:
+                0 2px 8px rgba(0,0,0,0.5);
+                
+                  color: #ffffff;
+                 text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+        }
+
+
+        /* =====================================
+           BUTTONS
+        ====================================== */
+
+        .buttons {
+
+            display: flex;
+
+            gap: 15px;
+        }
+
+
+        .order-btn {
+
+            display: inline-block;
+
+            padding: 15px 32px;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            color: white;
+
+            font-weight: bold;
+
+            font-size: 16px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ff5722,
+                    #ff9800
+                );
+
+            transition: 0.3s;
+
+            box-shadow:
+                0 8px 25px
+                rgba(255, 87, 34, 0.35);
+        }
+
+
+        .order-btn:hover {
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 12px 30px
+                rgba(255, 87, 34, 0.6);
+        }
+
+
+        .menu-btn {
+
+            display: inline-block;
+
+            padding: 15px 32px;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            color: white;
+
+            font-weight: bold;
+
+            border: 1px solid white;
+
+            background:
+                rgba(0, 0, 0, 0.25);
+
+            transition: 0.3s;
+        }
+
+
+        .menu-btn:hover {
+
+            background: white;
+
+            color: #111;
+
+            transform:
+                translateY(-3px);
+        }
+
+
+        /* =====================================
+           FEATURES
+        ====================================== */
+
+        .features {
+
+            display: flex;
+
+            gap: 40px;
+
+            margin-top: 55px;
+        }
+
+
+        .feature {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            animation:
+                featureFloat 4s ease-in-out infinite;
+        }
+
+
+        .feature:nth-child(2) {
+
+            animation-delay: 0.5s;
+        }
+
+
+        .feature:nth-child(3) {
+
+            animation-delay: 1s;
+        }
+
+
+        @keyframes featureFloat {
+
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+
+        .feature-icon {
+
+            font-size: 28px;
+        }
+
+
+        .feature-text strong {
+
+            display: block;
+
+            font-size: 14px;
+            
+              color: #ffffff;
+        }
+
+
+        .feature-text small {
+
+            color: #ddd;
+
+            font-size: 12px;
+            
+             color: #ffffff;
+        }
+
+
+        /* =====================================
+           FLOATING FOOD
+        ====================================== */
+
+        .particle {
+
+            position: absolute;
+
+            font-size: 25px;
+
+            z-index: 3;
+
+            opacity: 0.8;
+
+            animation:
+                float 5s ease-in-out infinite;
+        }
+
+
+        .particle1 {
+
+            top: 25%;
+
+            right: 38%;
+        }
+
+
+        .particle2 {
+
+            top: 42%;
+
+            right: 15%;
+
+            animation-delay: 1s;
+        }
+
+
+        .particle3 {
+
+            bottom: 20%;
+
+            right: 30%;
+
+            animation-delay: 2s;
+        }
+
+
+        .particle4 {
+
+            top: 15%;
+
+            right: 8%;
+
+            animation-delay: 3s;
+        }
+
+
+        .particle5 {
+
+            top: 60%;
+
+            right: 42%;
+
+            animation-delay: 1.5s;
+        }
+
+
+        @keyframes float {
+
+            0% {
+
+                transform:
+                    translateY(0)
+                    rotate(0deg)
+                    scale(1);
+            }
+
+            50% {
+
+                transform:
+                    translateY(-25px)
+                    rotate(15deg)
+                    scale(1.15);
+            }
+
+            100% {
+
+                transform:
+                    translateY(0)
+                    rotate(0deg)
+                    scale(1);
+            }
+        }
+
+
+        /* =====================================
+           SCROLL INDICATOR
+        ====================================== */
+
+        .scroll {
+
+            position: absolute;
+
+            bottom: 25px;
+
+            left: 50%;
+
+            transform:
+                translateX(-50%);
+
+            color: #ddd;
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+
+            opacity: 0.8;
+
+            animation:
+                scrollAnimation 2s ease-in-out infinite;
+        }
+
+
+        @keyframes scrollAnimation {
+
+            0% {
+                transform:
+                    translateX(-50%)
+                    translateY(0);
+            }
+
+            50% {
+                transform:
+                    translateX(-50%)
+                    translateY(-7px);
+            }
+
+            100% {
+                transform:
+                    translateX(-50%)
+                    translateY(0);
+            }
+        }
+
+
+        /* =====================================
+           TABLET
+        ====================================== */
+
+        @media (max-width: 1100px) {
+
+            .logo {
+
+                margin-right: 35px;
+            }
+
+            
+            .navbar {
+			    position: absolute;
+			    top: 0;
+			    left: 0;
+			    width: 100%;
+			    background: transparent;
+			}
+            .nav-links {
+
+                gap: 20px;
+            }
+
+
+            .nav-right span {
+
+                display: none;
+            }
+
+
+            .hero-content {
+
+                width: 60%;
+            }
+
+        }
+
+
+        /* =====================================
+           MOBILE
+        ====================================== */
+
+        @media (max-width: 900px) {
+
+            body {
+
+                overflow-y: auto;
+            }
+
+
+            .home {
+
+                min-height: 100vh;
+
+                background-position:
+                    center center;
+            }
+
+
+            .navbar {
+
+                height: auto;
+
+                padding:
+                    20px;
+
+                flex-wrap: wrap;
+
+                gap: 20px;
+            }
+
+
+            .logo {
+
+                margin-right: 0;
+            }
+
+
+            .nav-links {
+
+                order: 3;
+
+                width: 100%;
+
+                justify-content: center;
+
+                gap: 20px;
+            }
+
+
+            .nav-links a {
+
+                font-size: 13px;
+            }
+
+
+            .nav-right {
+
+                margin-left: auto;
+            }
+
+
+            .nav-right span {
+
+                display: none;
+            }
+
+
+            .signin-btn,
+            .signup-btn {
+
+                padding:
+                    9px 15px;
+
+                font-size: 13px;
+            }
+
+
+            .hero {
+
+                min-height:
+                    calc(100vh - 130px);
+
+                padding:
+                    50px 25px;
+
+                align-items: center;
+            }
+
+
+            .hero-content {
+
+                width: 100%;
+
+                max-width: 600px;
+            }
+
+
+            .hero h1 {
+
+                font-size: 52px;
+            }
+
+
+            .features {
+
+                gap: 20px;
+
+                flex-wrap: wrap;
+            }
+
+
+            .particle {
+
+                font-size: 20px;
+            }
+
+        }
+
+
+        /* =====================================
+           SMALL MOBILE
+        ====================================== */
+
+        @media (max-width: 500px) {
+
+            .navbar {
+
+                padding: 15px;
+            }
+
+
+            .logo {
+
+                font-size: 25px;
+            }
+
+
+            .nav-links {
+
+                gap: 12px;
+            }
+
+
+            .nav-links a {
+
+                font-size: 12px;
+            }
+
+
+            .signin-btn,
+            .signup-btn {
+
+                padding:
+                    8px 11px;
+
+                font-size: 11px;
+            }
+
+
+            .hero {
+
+                padding:
+                    40px 20px;
+            }
+
+
+            .hero h1 {
+
+                font-size: 42px;
+            }
+
+
+            .hero p {
+
+                font-size: 15px;
+            }
+
+
+            .buttons {
+
+                flex-direction: column;
+
+                width: 200px;
+            }
+
+
+            .features {
+
+                gap: 15px;
+            }
+
+
+            .feature {
+
+                gap: 5px;
+            }
+
+
+            .feature-icon {
+
+                font-size: 23px;
+            }
+
+
+            .scroll {
+
+                display: none;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         HOME PAGE
+    ====================================== -->
+
+    <section class="home">
+
+
+
+	 <video class="hero-video" autoplay muted loop playsinline>
+	        <source src="videos/preparefood.mp4" type="video/mp4">
+	    </video>
+	
+	    <div class="video-overlay"></div>
+        <!-- =================================
+             NAVIGATION
+        ================================== -->
+
+        <nav class="navbar">
+
+
+            <!-- LOGO -->
+
+            <div class="logo">
+
+                🍴 Food<span>ie</span>
+
+            </div>
+
+
+            <!-- NAVIGATION LINKS -->
+
+            <ul class="nav-links">
+
+
+                <li>
+
+                    <a
+                        href="home.html"
+                        class="active">
+
+                        Home
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="/Foodie/restaurant">
+
+                        Restaurants
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="#offers">
+
+                        Offers
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="${pageContext.request.contextPath}/orders">
+
+                        Orders
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="#contact">
+
+                        Contact
+
+                    </a>
+
+                </li>
+
+
+            </ul>
+
+
+            <!-- RIGHT NAV -->
+
+            <div class="nav-right">
+
+
+                <span>
+
+                    Welcome to Foodie
+
+                </span>
+
+
+                <!-- SIGN IN -->
+                <a
+                    href=login.jsp
+                    class="signin-btn"
+                     >
+
+                    Sign In
+
+                </a>
+
+
+                <!-- SIGN UP -->
+
+                <a
+                    href=signup.jsp
+                    class="signup-btn">
+
+                    Sign Up
+
+                </a>
+
+
+            </div>
+
+
+        </nav>
+
+
+
+
+
+        <!-- =================================
+             HERO CONTENT
+        ================================== -->
+
+        <div class="hero">
+
+
+            <div class="hero-content">
+
+
+                <!-- SMALL HEADING -->
+
+                <div class="small-heading">
+
+                    Delicious Food
+
+                </div>
+
+
+                <!-- MAIN HEADING -->
+
+                <h1>
+
+                    Good Food.
+
+                    <br>
+
+                    <span>
+
+                        Good Mood.
+
+                    </span>
+
+                </h1>
+
+
+                <!-- DESCRIPTION -->
+
+                <p>
+
+                    Discover delicious food prepared
+                    with passion. Order your favourite
+                    meals from the best restaurants and
+                    enjoy them at your doorstep.
+
+                </p>
+
+
+                <!-- BUTTONS -->
+
+                <div class="buttons">
+
+
+                    <a
+                        href="login.jsp"
+                        class="order-btn">
+
+                        Order Now →
+
+                    </a>
+
+
+                    <a
+                        href="restaurant"
+                        class="menu-btn">
+
+                        Explore Menu
+
+                    </a>
+
+
+                </div>
+
+
+
+                <!-- =================================
+                     FEATURES
+                ================================== -->
+
+                <div class="features">
+
+
+                    <!-- FAST DELIVERY -->
+
+                    <div class="feature">
+
+
+                        <div class="feature-icon">
+
+                            🛵
+
+                        </div>
+
+
+                        <div class="feature-text">
+
+                            <strong>
+
+                                Fast Delivery
+
+                            </strong>
+
+
+                            <small>
+
+                                At your doorstep
+
+                            </small>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- FRESH FOOD -->
+
+                    <div class="feature">
+
+
+                        <div class="feature-icon">
+
+                            🌿
+
+                        </div>
+
+
+                        <div class="feature-text">
+
+                            <strong>
+
+                                Fresh Food
+
+                            </strong>
+
+
+                            <small>
+
+                                Quality ingredients
+
+                            </small>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- GREAT TASTE -->
+
+                    <div class="feature">
+
+
+                        <div class="feature-icon">
+
+                            ❤️
+
+                        </div>
+
+
+                        <div class="feature-text">
+
+                            <strong>
+
+                                Great Taste
+
+                            </strong>
+
+
+                            <small>
+
+                                Made with love
+
+                            </small>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================
+             SCROLL
+        ================================== -->
+
+        <div class="scroll">
+
+            SCROLL TO EXPLORE ↓
+
+        </div>
+
+
+    </section>
+
+
+</body>
+
+</html>
